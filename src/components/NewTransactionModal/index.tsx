@@ -1,7 +1,10 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react';
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { Controller } from 'react-hook-form';
+import { TransactionsContext } from '../../contexts/TransactionsContexts';
+import { api } from '../../libs/axios';
 import { CloseButton, Content, Overlay, TransactionType, TransactionTypeButton } from './styles';
 
 interface newTransactionForm {
@@ -12,11 +15,23 @@ interface newTransactionForm {
 }
 
 export function NewTransactionModal() {
-    const { control, register, handleSubmit } = useForm<newTransactionForm>()
+    const { createTransaction } = useContext(TransactionsContext)
 
-    function handleCreateteste(data: newTransactionForm) {
-        console.log(data)
+    const { control, register, handleSubmit, reset } = useForm<newTransactionForm>()
+
+    async function handleCreateteste(data: newTransactionForm) {
+        const { category, description, price, type } = data
+
+        await createTransaction({
+            category,
+            description,
+            price,
+            type
+        })
+
+        reset()
     }
+
     return (
         <Dialog.Portal>
             <Overlay />

@@ -1,29 +1,44 @@
 {
-    "transactions": [
-        {
-            "id": 1,
-            "description": "Desenvolvimento de site",
-            "type": "income",
-            "category": "Venda" ,
-            "price": 14000,
-            "createdAt": "2023-01-10T05:45:43.724Z"
-        },
-        {
-            "id": 2,
-            "description": "Compra de Rações",
-            "type": "outcome",
-            "category": "Compra" ,
-            "price": 2000,
-            "createdAt": "2023-01-09T05:45:43.724Z"
-        },
-        {
-            "id": 3,
-            "description": "Placa de video",
-            "type": "outcome",
-            "category": "Compra" ,
-            "price": 500,
-            "createdAt": "2023-01-01T05:45:43.724Z"
-        }
-    ]
-    
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de site",
+      "type": "income",
+      "category": "Venda",
+      "price": 14000,
+      "createdAt": "2023-01-10T05:45:43.724Z"
+    },
+    {
+      "id": 2,
+      "description": "Compra de Rações",
+      "type": "outcome",
+      "category": "Compra",
+      "price": 2000,
+      "createdAt": "2023-01-09T05:45:43.724Z"
+    },
+    {
+      "id": 3,
+      "description": "Placa de video",
+      "type": "outcome",
+      "category": "Compra",
+      "price": 500,
+      "createdAt": "2023-01-01T05:45:43.724Z"
+    },
+    {
+      "description": "Monitor",
+      "price": 900,
+      "category": "Periférico",
+      "type": "outcome",
+      "createdAt": "2023-01-11T05:40:25.836Z",
+      "id": 4
+    },
+    {
+      "description": "mouse",
+      "price": 200,
+      "category": "Periférico",
+      "type": "outcome",
+      "createdAt": "2023-01-11T05:58:22.693Z",
+      "id": 5
+    }
+  ]
 }
