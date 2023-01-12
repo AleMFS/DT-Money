@@ -1,10 +1,8 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Controller } from 'react-hook-form';
 import { TransactionsContext } from '../../contexts/TransactionsContexts';
-import { api } from '../../libs/axios';
 import { CloseButton, Content, Overlay, TransactionType, TransactionTypeButton } from './styles';
 
 interface newTransactionForm {
@@ -16,10 +14,11 @@ interface newTransactionForm {
 
 export function NewTransactionModal() {
     const { createTransaction } = useContext(TransactionsContext)
-
-    const { control, register, handleSubmit, reset } = useForm<newTransactionForm>()
+    const [selectedValue, setSelectedValue] = useState<string>('');
+    const { register, handleSubmit, reset } = useForm<newTransactionForm>()
 
     async function handleCreateteste(data: newTransactionForm) {
+        
         const { category, description, price, type } = data
 
         await createTransaction({
@@ -28,9 +27,17 @@ export function NewTransactionModal() {
             price,
             type
         })
-
         reset()
+        setSelectedValue('')
     }
+
+  
+
+    function handleSelected(e: any) {
+        setSelectedValue(e.target.value)
+
+    }
+
 
     return (
         <Dialog.Portal>
@@ -50,28 +57,40 @@ export function NewTransactionModal() {
                     <input {...register('category')} type="text" placeholder='Categoria' required minLength={3} />
 
 
+                    <TransactionType  >
+                        <div className='income'>
+                            <input
+                                {...register('type')}
+                                id='income'
+                                type='radio'
+                                value='income'
+                                onClick={e => handleSelected(e)}
 
-                    <Controller
-                        control={control}
-                        name="type"
+                            />
+                            <TransactionTypeButton htmlFor="income" variant='income' className={selectedValue === 'income' ? 'selected' : ''}>
+                                <ArrowCircleUp size={24} />
+                                Entrada
+                            </TransactionTypeButton>
+                        </div>
+                        <div className='outcome'>
+                            <input
+                                {...register('type')}
+                                id='outcome'
+                                type='radio'
+                                value="outcome"
+                                onClick={e => handleSelected(e)}
 
-                        render={({ field }) => {
-                            return (
-                                <TransactionType onValueChange={field.onChange} >
-                                    <TransactionTypeButton variant='income' value='income' >
-                                        <ArrowCircleUp size={24} />
-                                        Entrada
-                                    </TransactionTypeButton>
-                                    <TransactionTypeButton variant='outcome' value='outcome' >
-                                        <ArrowCircleDown size={24} />
-                                        Saída
-                                    </TransactionTypeButton>
 
-                                </TransactionType>
-                            )
-                        }}
-                    />
+                            />
+                            <TransactionTypeButton htmlFor="outcome" variant='outcome' className={selectedValue === 'outcome' ? 'selected' : ''}>
+                                <ArrowCircleDown size={24} />
+                                Saída
+                            </TransactionTypeButton>
+                        </div>
 
+
+                    </TransactionType>
+                    
                     <button type='submit'>Cadastrar</button>
 
                 </form>

@@ -14,6 +14,7 @@ export function Transactions() {
     const { transactions } = useContext(TransactionsContext)
     const transactionCount = transactions.length
     const [currentPage, setCurrentPage] = useState(1)
+    console.log(transactions)
 
     const handlePageClick = (data: any) => {
         const currentPage = data.selected + 1;

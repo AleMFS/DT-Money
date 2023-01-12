@@ -1,20 +1,12 @@
 {
   "transactions": [
     {
-      "description": "Placa de vídeo",
-      "price": 550,
+      "description": "Monitor",
+      "price": 800,
       "category": "Hardware",
-      "type": "outcome",
-      "createdAt": "2023-01-12T05:52:06.853Z",
-      "id": 1
-    },
-    {
-      "description": "Desenvolvimento de Site",
-      "price": 24000,
-      "category": "Site",
       "type": "income",
-      "createdAt": "2023-01-12T06:06:19.201Z",
-      "id": 2
+      "createdAt": "2023-01-12T08:19:38.075Z",
+      "id": 1
     }
   ]
 }
