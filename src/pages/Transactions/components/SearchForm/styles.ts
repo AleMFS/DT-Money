@@ -45,5 +45,10 @@ export const SearchFormContainer = styled.form`
                 color 0.2s, 
                 border-color 0.2s;
         }
+        @media (max-width:450px){
+            span{
+                display: none;
+            }
+        }
     }
 `

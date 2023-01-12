@@ -1,44 +1,34 @@
 {
   "transactions": [
     {
-      "id": 1,
-      "description": "Desenvolvimento de site",
-      "type": "income",
+      "description": "Desenvolvimento de Site",
+      "price": 5000,
       "category": "Venda",
-      "price": 14000,
-      "createdAt": "2023-01-10T05:45:43.724Z"
+      "type": "income",
+      "createdAt": "2023-01-12T02:04:51.458Z",
+      "id": 1
     },
     {
-      "id": 2,
-      "description": "Compra de Rações",
+      "description": "Placa mãe",
+      "price": 650,
+      "category": "Hardware",
       "type": "outcome",
-      "category": "Compra",
-      "price": 2000,
-      "createdAt": "2023-01-09T05:45:43.724Z"
+      "createdAt": "2023-01-12T02:05:13.277Z",
+      "id": 2
     },
     {
-      "id": 3,
-      "description": "Placa de video",
-      "type": "outcome",
-      "category": "Compra",
-      "price": 500,
-      "createdAt": "2023-01-01T05:45:43.724Z"
+      "description": "Processador",
+      "price": 550,
+      "category": "Hardware",
+      "createdAt": "2023-01-12T02:05:24.233Z",
+      "id": 3
     },
     {
-      "description": "Monitor",
-      "price": 900,
-      "category": "Periférico",
-      "type": "outcome",
-      "createdAt": "2023-01-11T05:40:25.836Z",
+      "description": "Placa de vídeo",
+      "price": 450,
+      "category": "Hardware",
+      "createdAt": "2023-01-12T02:05:39.233Z",
       "id": 4
-    },
-    {
-      "description": "mouse",
-      "price": 200,
-      "category": "Periférico",
-      "type": "outcome",
-      "createdAt": "2023-01-11T05:58:22.693Z",
-      "id": 5
     }
   ]
 }

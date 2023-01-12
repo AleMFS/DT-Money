@@ -10,7 +10,8 @@ export const Overlay = styled(Dialog.Overlay)`
     background: rgba(0, 0, 0, 0.75);
 `
 export const Content = styled(Dialog.Content)`
-    min-width: 32rem;
+    width: 90%;
+    max-width: 32rem;
     border-radius: 6px;
     padding: 2.5rem 3rem;
     background: ${props => props.theme.colors['gray-800']};

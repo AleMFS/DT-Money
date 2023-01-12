@@ -49,6 +49,8 @@ export function NewTransactionModal() {
                     <input {...register('price', { valueAsNumber: true })} type="number" placeholder='Preço' />
                     <input {...register('category')} type="text" placeholder='Categoria' />
 
+                    
+
                     <Controller
                         control={control}
                         name="type"

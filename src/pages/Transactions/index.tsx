@@ -1,20 +1,27 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext} from "react";
 import { Header } from "../../components/Header";
 import { Summary } from "../../components/Summary";
 import { TransactionsContext } from "../../contexts/TransactionsContexts";
 import { dateFormatter, priceFormmater } from "../../utils/formatter";
 import { SearchForm } from "./components/SearchForm";
-import { PriceHighLight, TransactionsContainer, TransactionsTable } from "./styles";
+import { MobileCount, PriceHighLight, TransactionsContainer, TransactionsTable } from "./styles";
+import {TagSimple,CalendarBlank } from 'phosphor-react'
 
 
 
 export function Transactions() {
     const { transactions } = useContext(TransactionsContext)
+    const transactionCount = transactions.length
 
     return (
         <div>
             <Header />
             <Summary />
+
+            <MobileCount>
+                <span>Transações</span>
+                {`${transactionCount} itens`}
+            </MobileCount>
 
             <TransactionsContainer>
                 <SearchForm />
@@ -23,16 +30,21 @@ export function Transactions() {
                         {transactions.map(transaction => {
                             return (
                                 <tr key={transaction.id}>
-                                    <td width='50%'>{transaction.description} </td>
                                     <td>
-                                        <PriceHighLight variant={transaction.type}>
-                                            {transaction.type === 'outcome' && '- '}
-                                            {priceFormmater.format(transaction.price)}
-                                        </PriceHighLight>
-                                    </td>
+                                        <div className="tdContainer">
+                                            <div className="description">{transaction.description}</div>
+                                            <div>
+                                                <PriceHighLight variant={transaction.type}>
+                                                    {transaction.type === 'outcome' && '- '}
+                                                    {priceFormmater.format(transaction.price)}
+                                                </PriceHighLight></div>
+                                            <div className="CategoryAndDate">
+                                                <div>{transaction.category}</div>
+                                                <div className="date"> <CalendarBlank size={16}/>{dateFormatter.format(new Date(transaction.createdAt))}</div>
+                                            </div>
+                                        </div>
 
-                                    <td>{transaction.category}</td>
-                                    <td>{dateFormatter.format(new Date(transaction.createdAt))}</td>
+                                    </td>
                                 </tr>
                             )
                         })}
