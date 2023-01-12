@@ -1,4 +1,6 @@
+import { ReactPaginateProps } from 'react-paginate'
 import styled from "styled-components";
+
 
 export const TransactionsContainer = styled.main`
     width: calc(100% - 1.5rem);
@@ -8,6 +10,60 @@ export const TransactionsContainer = styled.main`
     @media (max-width:450px){
         margin: 0 auto ;
     }
+
+ 
+    // pagination
+
+    .container{
+        margin: 2rem auto;
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        list-style: none;
+
+        li{
+            width: 2.5rem;
+            height: 2.5rem;
+            
+            cursor: pointer;
+
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            background: ${props => props.theme.colors['gray-600']};
+            border-radius: 6px;
+           
+        }
+        
+        .currentNumberPage{
+            color: ${props => props.theme.colors['gray-100']};
+            background: ${props => props.theme.colors['green-700']};
+            border-radius: 6px;
+        }  
+         
+        .containerNumber{
+            width: 2.5rem;
+            height: 2.5rem;
+            
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }  
+        .arrowSelected{
+            color: ${props =>props.theme.colors['green-500']};
+            background: transparent;
+            
+        }
+        .arrowDisabled{
+            color: ${props => props.theme.colors['gray-600']};
+            background: transparent;
+        } 
+        
+       
+    }
+    
+    
    
 `
 
@@ -45,17 +101,20 @@ export const TransactionsTable = styled.table`
             .date{
                 display: flex;
                 align-items: center;
+                
                 gap: 0.25rem;
 
                 
             }
             
-        }
+        }       
 
                
         }
 
-        @media (max-width:450px){
+        
+
+        @media (max-width:1130px){
             .tdContainer{
                 display: flex;
                 flex-direction: column;
@@ -68,6 +127,8 @@ export const TransactionsTable = styled.table`
                 }
                 .CategoryAndDate{
                     margin: 0;
+                    align-items: center;
+                    
                 }
 
             } 
@@ -102,6 +163,7 @@ export const PriceHighLight = styled.span<PriceHighLightProps>`
     @media (max-width:450px){
         font-weight: bold;
         font-size: 1.25rem;
+        
     }
 `
 
@@ -123,3 +185,4 @@ export const MobileCount = styled.div`
 }
 
 `
+

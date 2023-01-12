@@ -1,34 +1,20 @@
 {
   "transactions": [
     {
-      "description": "Desenvolvimento de Site",
-      "price": 5000,
-      "category": "Venda",
-      "type": "income",
-      "createdAt": "2023-01-12T02:04:51.458Z",
+      "description": "Placa de vídeo",
+      "price": 550,
+      "category": "Hardware",
+      "type": "outcome",
+      "createdAt": "2023-01-12T05:52:06.853Z",
       "id": 1
     },
     {
-      "description": "Placa mãe",
-      "price": 650,
-      "category": "Hardware",
-      "type": "outcome",
-      "createdAt": "2023-01-12T02:05:13.277Z",
+      "description": "Desenvolvimento de Site",
+      "price": 24000,
+      "category": "Site",
+      "type": "income",
+      "createdAt": "2023-01-12T06:06:19.201Z",
       "id": 2
-    },
-    {
-      "description": "Processador",
-      "price": 550,
-      "category": "Hardware",
-      "createdAt": "2023-01-12T02:05:24.233Z",
-      "id": 3
-    },
-    {
-      "description": "Placa de vídeo",
-      "price": 450,
-      "category": "Hardware",
-      "createdAt": "2023-01-12T02:05:39.233Z",
-      "id": 4
     }
   ]
 }

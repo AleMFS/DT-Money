@@ -45,23 +45,24 @@ export function NewTransactionModal() {
 
                 <form action="" onSubmit={handleSubmit(handleCreateteste)}>
 
-                    <input {...register('description')} type="text" placeholder='Descrição' />
-                    <input {...register('price', { valueAsNumber: true })} type="number" placeholder='Preço' />
-                    <input {...register('category')} type="text" placeholder='Categoria' />
+                    <input {...register('description')} type="text" placeholder='Descrição' required />
+                    <input {...register('price', { valueAsNumber: true })} type="number" placeholder='Preço' required />
+                    <input {...register('category')} type="text" placeholder='Categoria' required minLength={3} />
 
-                    
+
 
                     <Controller
                         control={control}
                         name="type"
+
                         render={({ field }) => {
                             return (
-                                <TransactionType onValueChange={field.onChange}>
-                                    <TransactionTypeButton variant='income' value='income'>
+                                <TransactionType onValueChange={field.onChange} >
+                                    <TransactionTypeButton variant='income' value='income' >
                                         <ArrowCircleUp size={24} />
                                         Entrada
                                     </TransactionTypeButton>
-                                    <TransactionTypeButton variant='outcome' value='outcome'>
+                                    <TransactionTypeButton variant='outcome' value='outcome' >
                                         <ArrowCircleDown size={24} />
                                         Saída
                                     </TransactionTypeButton>
