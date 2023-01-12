@@ -12,8 +12,7 @@ export function SearchForm() {
     const { fetchTransactions } = useContext(TransactionsContext)
     const {
         register,
-        handleSubmit,
-        reset,
+        handleSubmit,        
         formState: { isSubmitting }
     } = useForm<SearchFormSchema>()
 
@@ -21,12 +20,13 @@ export function SearchForm() {
         await fetchTransactions(data.query)
     }
     return (
-        <SearchFormContainer onSubmit={handleSubmit(handleSearchTransactions)}>
+        <SearchFormContainer onChangeCapture={handleSubmit(handleSearchTransactions)}>
             <input
                 type="text"
                 placeholder="Busque por transações"
                 {...register('query')}
-                required
+                minLength={3}
+                
             />
 
             <button type="submit" disabled={isSubmitting}>

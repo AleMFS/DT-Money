@@ -1,12 +1,28 @@
 {
   "transactions": [
     {
-      "description": "Monitor",
-      "price": 800,
+      "description": "Placa de vídeo",
+      "price": 560,
       "category": "Hardware",
-      "type": "income",
-      "createdAt": "2023-01-12T08:19:38.075Z",
+      "type": "outcome",
+      "createdAt": "2023-01-12T18:29:01.925Z",
       "id": 1
+    },
+    {
+      "description": "Monitor",
+      "price": 900,
+      "category": "Hardware",
+      "type": "outcome",
+      "createdAt": "2023-01-12T18:30:13.884Z",
+      "id": 2
+    },
+    {
+      "description": "Placas de captura",
+      "price": 600,
+      "category": "Hardware",
+      "type": "outcome",
+      "createdAt": "2023-01-12T18:33:40.120Z",
+      "id": 3
     }
   ]
 }

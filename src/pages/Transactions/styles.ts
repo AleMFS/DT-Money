@@ -51,7 +51,7 @@ export const TransactionsContainer = styled.main`
             align-items: center;
         }  
         .arrowSelected{
-            color: ${props =>props.theme.colors['green-500']};
+            color: ${props => props.theme.colors['green-500']};
             background: transparent;
             
         }
@@ -91,28 +91,43 @@ export const TransactionsTable = styled.table`
             padding: 1.25rem 2rem;  
         }
         .CategoryAndDate{
+            position: relative;
             flex: 1;
             display: flex;
             justify-content: space-between;
             gap: 4rem;
             margin: 0 2rem;       
         
-            color: ${props => props.theme.colors["gray-500"]};
+            color: ${props => props.theme.colors["gray-300"]};
             .date{
                 display: flex;
                 align-items: center;
                 
-                gap: 0.25rem;
+                gap: 0.25rem;                
+            }
+            .trash{
+                position: absolute;
+                right: -0.75rem;
+                
+
+                button{
+                    border: none;
+                    background: transparent;
+                    color: ${props => props.theme.colors['gray-300']};
+                    cursor: pointer;
+
+                    &:hover{
+                    color: ${props => props.theme.colors['red-300'] };
+
+                }
+            }
+                }
 
                 
-            }
-            
         }       
 
                
-        }
-
-        
+        }        
 
         @media (max-width:1130px){
             .tdContainer{
@@ -125,30 +140,23 @@ export const TransactionsTable = styled.table`
                 >div{
                     padding: 0.5rem;
                 }
-                .CategoryAndDate{
+                  .CategoryAndDate{
                     margin: 0;
                     align-items: center;
+                    color: ${props => props.theme.colors["gray-500"]};
+
+                    .trash{
+                        position: absolute;
+                        top: -4rem;
+                        right: 1rem;
+            }
                     
                 }
 
-            } 
-        
-           
-            
-          
+            }         
+                 
         }
-        /*}
-         padding: 1.25rem 2rem;
-         background: ${props => props.theme.colors["gray-700"]};
-
-         &:first-child{
-            border-top-left-radius: 6px;
-            border-bottom-left-radius: 6px;
-         }
-         td{
-            border-top-right-radius: 6px;
-            border-bottom-right-radius: 6px;
-         }*/
+     
     
 
     

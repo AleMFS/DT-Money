@@ -22,7 +22,7 @@ export function Summary() {
                 </header>
                 <strong>{priceFormmater.format(summary.outcome)}</strong>
             </SummaryCard>
-            <SummaryCard variant="green">
+            <SummaryCard variant={summary.total > 0 ? 'green' : summary.total < 0 ? 'red': 'gray' }>
                 <header>
                     <span>Total</span>
                     <CurrencyDollar size={32} color="#fff" />

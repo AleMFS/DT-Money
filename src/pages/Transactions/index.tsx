@@ -5,16 +5,16 @@ import { TransactionsContext } from "../../contexts/TransactionsContexts";
 import { dateFormatter, priceFormmater } from "../../utils/formatter";
 import { SearchForm } from "./components/SearchForm";
 import { MobileCount, PriceHighLight, TransactionsContainer, TransactionsTable } from "./styles";
-import { TagSimple, CalendarBlank, CaretLeft, CaretRight } from 'phosphor-react'
+import { TagSimple, CalendarBlank, CaretLeft, CaretRight, Trash } from 'phosphor-react'
 import ReactPaginate from "react-paginate";
 
 
 
 export function Transactions() {
-    const { transactions } = useContext(TransactionsContext)
+    const { transactions, deleteTransaction } = useContext(TransactionsContext)
     const transactionCount = transactions.length
     const [currentPage, setCurrentPage] = useState(1)
-    console.log(transactions)
+
 
     const handlePageClick = (data: any) => {
         const currentPage = data.selected + 1;
@@ -25,6 +25,10 @@ export function Transactions() {
     const start = itemPerPage * (currentPage - 1)
     const end = start + itemPerPage
     const transactionsPerPage = transactions.slice(start, end)
+
+    function handleDeleteTransaction(id: number) {
+        deleteTransaction(id)
+    }
 
 
 
@@ -56,6 +60,11 @@ export function Transactions() {
                                             <div className="CategoryAndDate">
                                                 <div>{transaction.category}</div>
                                                 <div className="date"> <CalendarBlank size={16} />{dateFormatter.format(new Date(transaction.createdAt))}</div>
+                                                <div className="trash">
+                                                    <button type="button" onClick={() => handleDeleteTransaction(transaction.id)}>
+                                                        <Trash size={20} weight='bold' />
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
 
