@@ -178,7 +178,7 @@ export const PriceHighLight = styled.span<PriceHighLightProps>`
 export const MobileCount = styled.div`
     display: none;
 
-@media (max-width:450px){
+@media (max-width:750px){
     width: calc(100% - 1.5rem);
     margin: 1.5rem auto;
     display: flex;

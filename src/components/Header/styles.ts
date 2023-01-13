@@ -6,6 +6,10 @@ export const HeaderContainer = styled.header`
     background: ${props => props.theme.colors["gray-900"]};
     padding:  2.5rem 0 7.5rem;
 
+    img{
+        width: 10.875rem;
+    }
+
 `
 
 export const HeaderContent = styled.div`

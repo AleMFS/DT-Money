@@ -1,7 +1,7 @@
 import { SearchFormContainer } from "./styles";
 import { MagnifyingGlass } from 'phosphor-react'
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { TransactionsContext } from "../../../../contexts/TransactionsContexts";
 
 interface SearchFormSchema {
@@ -9,6 +9,7 @@ interface SearchFormSchema {
 }
 
 export function SearchForm() {
+    const [inputValue, setInputVelue] = useState('')
     const { fetchTransactions } = useContext(TransactionsContext)
     const {
         register,
@@ -16,16 +17,26 @@ export function SearchForm() {
         formState: { isSubmitting }
     } = useForm<SearchFormSchema>()
 
+    function changeSearch(value:string){
+        setInputVelue(value) 
+        if(value === ''){
+            handleSearchTransactions({query: value})
+        }
+    }
+
     async function handleSearchTransactions(data: SearchFormSchema) {
         await fetchTransactions(data.query)
     }
     return (
-        <SearchFormContainer onChangeCapture={handleSubmit(handleSearchTransactions)}>
+        <SearchFormContainer onSubmit={handleSubmit(handleSearchTransactions)}>
             <input
                 type="text"
                 placeholder="Busque por transações"
                 {...register('query')}
                 minLength={3}
+                value={inputValue}
+                onChange={(event) => changeSearch(event.target.value)}
+                
                 
             />
 

@@ -61,7 +61,7 @@ export function Transactions() {
                                                 <div>{transaction.category}</div>
                                                 <div className="date"> <CalendarBlank size={16} />{dateFormatter.format(new Date(transaction.createdAt))}</div>
                                                 <div className="trash">
-                                                    <button type="button" onClick={() => handleDeleteTransaction(transaction.id)}>
+                                                    <button type="button" onClick={() =>    handleDeleteTransaction(transaction.id)}>
                                                         <Trash size={20} weight='bold' />
                                                     </button>
                                                 </div>
