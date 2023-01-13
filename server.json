@@ -1,20 +1,44 @@
 {
   "transactions": [
     {
-      "description": "placa de video",
-      "price": 100,
-      "category": "dawdawda",
+      "description": "1651",
+      "price": 10000,
+      "category": "wdawad",
       "type": "income",
-      "createdAt": "2023-01-13T03:10:46.026Z",
-      "id": 1
+      "createdAt": "2023-01-13T03:50:05.133Z",
+      "id": 4
     },
     {
-      "description": "monitor",
-      "price": 1000,
-      "category": "dwaawd",
-      "type": "outcome",
-      "createdAt": "2023-01-13T03:11:08.725Z",
-      "id": 2
+      "description": "15051",
+      "price": 105061,
+      "category": "10000",
+      "type": "income",
+      "createdAt": "2023-01-13T03:50:28.980Z",
+      "id": 5
+    },
+    {
+      "description": "100",
+      "price": 100,
+      "category": "1000",
+      "type": "income",
+      "createdAt": "2023-01-13T03:55:01.885Z",
+      "id": 6
+    },
+    {
+      "description": "1000",
+      "price": 100,
+      "category": "10000",
+      "type": "income",
+      "createdAt": "2023-01-13T03:55:07.062Z",
+      "id": 7
+    },
+    {
+      "description": "021",
+      "price": 1021,
+      "category": "3121",
+      "type": "income",
+      "createdAt": "2023-01-13T03:58:07.831Z",
+      "id": 8
     }
   ]
 }

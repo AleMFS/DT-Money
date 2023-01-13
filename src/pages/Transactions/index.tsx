@@ -28,6 +28,7 @@ export function Transactions() {
 
     function handleDeleteTransaction(id: number) {
         deleteTransaction(id)
+        setCurrentPage(1)
     }
 
 

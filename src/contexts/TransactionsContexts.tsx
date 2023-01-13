@@ -47,6 +47,7 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
     async function deleteTransaction(id: number){
         await api.delete(`transactions/${id}`)
         fetchTransactions();
+        
     }
     
 
