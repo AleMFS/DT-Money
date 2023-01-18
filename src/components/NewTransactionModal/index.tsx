@@ -18,7 +18,7 @@ export function NewTransactionModal() {
     const { register, handleSubmit, reset } = useForm<newTransactionForm>()
 
     async function handleCreateteste(data: newTransactionForm) {
-        
+
         const { category, description, price, type } = data
 
         await createTransaction({
@@ -31,7 +31,7 @@ export function NewTransactionModal() {
         setSelectedValue('')
     }
 
-  
+
 
     function handleSelected(e: any) {
         setSelectedValue(e.target.value)
@@ -53,18 +53,20 @@ export function NewTransactionModal() {
                 <form action="" onSubmit={handleSubmit(handleCreateteste)}>
 
                     <input {...register('description')} type="text" placeholder='Descrição' required />
-                    <input {...register('price', { valueAsNumber: true })} type="number" placeholder='Preço' required />
+                    <input {...register('price', { valueAsNumber: true })} type="number" placeholder='Preço' />
                     <input {...register('category')} type="text" placeholder='Categoria' required minLength={3} />
 
 
                     <TransactionType  >
                         <div className='income'>
                             <input
-                                {...register('type')}
+                                {...register('type',)}
                                 id='income'
                                 type='radio'
                                 value='income'
                                 onClick={e => handleSelected(e)}
+                                required
+
 
                             />
                             <TransactionTypeButton htmlFor="income" variant='income' className={selectedValue === 'income' ? 'selected' : ''}>
@@ -90,7 +92,7 @@ export function NewTransactionModal() {
 
 
                     </TransactionType>
-                    
+
                     <button type='submit'>Cadastrar</button>
 
                 </form>

@@ -40,6 +40,10 @@ export const Content = styled(Dialog.Content)`
                 color: ${props => props.theme.colors['gray-500']};
             }
 
+            input::-webkit-calendar-picker-indicator {
+        background: transparent;
+        }
+
         }
         
         button[type="submit"]{

@@ -8,8 +8,9 @@ export function Header() {
     return (
         <HeaderContainer>
             <HeaderContent>
+                <a href="">
                 <img src={LogoImg} alt="" />
-
+                </a>
 
                 <Dialog.Root>
                     <Dialog.Trigger asChild>
