@@ -1,46 +1,6 @@
 {
   "transactions": [
     {
-      "description": "Monitor",
-      "price": 700,
-      "category": "Hardware",
-      "type": "outcome",
-      "createdAt": "2023-01-18T00:14:28.978Z",
-      "id": 2
-    },
-    {
-      "description": "Placa de vídeo",
-      "price": 1200,
-      "category": "Hardware",
-      "type": "outcome",
-      "createdAt": "2023-01-18T00:14:51.986Z",
-      "id": 3
-    },
-    {
-      "description": "React",
-      "price": 250,
-      "category": "Curso",
-      "type": "outcome",
-      "createdAt": "2023-01-18T00:16:12.796Z",
-      "id": 4
-    },
-    {
-      "description": "Placa mãe ",
-      "price": 500,
-      "category": "Hardware",
-      "type": "outcome",
-      "createdAt": "2023-01-18T00:16:47.305Z",
-      "id": 5
-    },
-    {
-      "description": "Processador",
-      "price": 700,
-      "category": "Hardware",
-      "type": "outcome",
-      "createdAt": "2023-01-18T00:17:01.740Z",
-      "id": 6
-    },
-    {
       "description": "Memoria",
       "price": 150,
       "category": "hardware",

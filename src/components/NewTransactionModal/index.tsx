@@ -29,6 +29,7 @@ export function NewTransactionModal() {
         })
         reset()
         setSelectedValue('')
+        
     }
 
 

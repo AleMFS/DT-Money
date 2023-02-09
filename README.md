@@ -25,7 +25,7 @@ In the directory you can run:
 ```
 1. `npm i`
 2. `npm run dev`
-3. `npx server-json json.server -w`
+3. `npx json-server server.json -w`
 ```
 <br>
 

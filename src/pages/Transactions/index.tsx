@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { Summary } from "../../components/Summary";
-import { TransactionsContext } from "../../contexts/TransactionsContexts";
 import { dateFormatter, priceFormmater } from "../../utils/formatter";
 import { SearchForm } from "./components/SearchForm";
 import { MobileCount, PriceHighLight, TransactionsContainer, TransactionsTable } from "./styles";
 import { TagSimple, CalendarBlank, CaretLeft, CaretRight, Trash } from 'phosphor-react'
 import ReactPaginate from "react-paginate";
+import { TransactionsContext } from "../../contexts/TransactionsContexts";
 
 
 
